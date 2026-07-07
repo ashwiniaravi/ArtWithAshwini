@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400;1,700&family=Lato:wght@300;400;700;900&display=swap');
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    width: 1080px;
+    min-height: 1350px;
+    font-family: 'Lato', sans-serif;
+    background: #FDF6EC;
+  }
+
+  .flyer {
+    width: 1080px;
+    min-height: 1350px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ─── TOP BAND ─── */
+  .top-band {
+    background: linear-gradient(135deg, #3B2A1A 0%, #5C3D1E 100%);
+    padding: 48px 72px 42px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .top-band::before {
+    content: '';
+    position: absolute;
+    top: -50px; right: -50px;
+    width: 260px; height: 260px;
+    border-radius: 50%;
+    background: rgba(200,144,42,0.10);
+  }
+  .top-band::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(to right, #C8902A, #E8A838, #C8902A);
+  }
+  .top-label {
+    font-size: 12px; font-weight: 700;
+    letter-spacing: 0.38em; text-transform: uppercase;
+    color: #C8902A; margin-bottom: 18px;
+  }
+  .top-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 60px; font-weight: 700;
+    color: #FDF6EC; line-height: 1.06; margin-bottom: 12px;
+  }
+  .top-title em { color: #E8A838; font-style: italic; }
+  .top-sub {
+    font-size: 14.5px; font-weight: 300;
+    color: rgba(253,246,236,0.6);
+    letter-spacing: 0.14em; text-transform: uppercase;
+  }
+
+  /* ─── SECTION A: SUMMER WORKSHOP ─── */
+  .section-a {
+    background: #FDF6EC;
+    padding: 32px 72px 28px;
+    flex-shrink: 0;
+    border-bottom: 1px solid #E8DBC8;
+  }
+  .section-header {
+    display: flex; align-items: center; gap: 12px; margin-bottom: 6px;
+  }
+  .badge {
+    display: inline-block;
+    background: #C8902A; color: #fff;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    padding: 4px 12px; border-radius: 100px;
+    white-space: nowrap;
+  }
+  .badge.terracotta { background: #C0552B; }
+  .badge.outline {
+    background: transparent; color: #7A6040;
+    border: 1.5px solid #D4B896;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px; font-weight: 700;
+    color: #3B2A1A; line-height: 1.1; margin-bottom: 5px;
+  }
+  .section-tagline {
+    font-size: 13px; color: #9A8060; letter-spacing: 0.06em;
+    margin-bottom: 16px;
+  }
+
+  /* Info pills */
+  .pills {
+    display: flex; gap: 9px; flex-wrap: wrap; margin-bottom: 18px;
+  }
+  .pill {
+    display: inline-flex; align-items: center; gap: 5px;
+    background: #fff; border: 1.5px solid #DDD0BA;
+    border-radius: 100px; padding: 5px 13px;
+    font-size: 12.5px; font-weight: 600; color: #3B2A1A;
+  }
+
+  /* Artist cards */
+  .label {
+    font-size: 10.5px; font-weight: 700;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    color: #C8902A; margin-bottom: 11px;
+  }
+  .artists-grid {
+    display: grid; grid-template-columns: repeat(5, 1fr);
+    gap: 9px; margin-bottom: 20px;
+  }
+  .artist-card {
+    background: #3B2A1A; border-radius: 8px;
+    padding: 14px 8px; text-align: center;
+  }
+  .artist-day {
+    font-size: 9.5px; font-weight: 900;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: #C8902A; margin-bottom: 7px;
+  }
+  .artist-icon { font-size: 22px; margin-bottom: 5px; }
+  .artist-name {
+    font-size: 11px; color: #FDF6EC;
+    font-weight: 700; line-height: 1.35;
+  }
+  .artist-style {
+    font-size: 10px; color: rgba(253,246,236,0.5);
+    font-weight: 400; margin-top: 3px;
+  }
+
+  /* Pricing */
+  .pricing-row {
+    display: flex; gap: 11px; margin-bottom: 15px;
+  }
+  .price-card {
+    flex: 1; border: 1.5px solid #DDD0BA;
+    border-radius: 8px; padding: 15px 10px;
+    text-align: center; background: #fff; position: relative;
+  }
+  .price-card.best { border-color: #C8902A; background: #FFF8EE; }
+  .best-badge {
+    position: absolute; top: -10px; left: 50%;
+    transform: translateX(-50%);
+    background: #C8902A; color: #fff;
+    font-size: 9px; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 3px 11px; border-radius: 100px; white-space: nowrap;
+  }
+  .price-days {
+    font-size: 10.5px; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: #7A6040; margin-bottom: 5px;
+  }
+  .price-amt {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px; font-weight: 700;
+    color: #3B2A1A; line-height: 1; margin-bottom: 3px;
+  }
+  .price-note { font-size: 10px; color: #9A8060; }
+
+  /* Includes */
+  .includes {
+    display: flex; align-items: center; gap: 10px;
+    background: #F0E6D0; border-radius: 6px; padding: 11px 18px;
+  }
+  .includes p {
+    font-size: 13px; color: #5C3D1E; font-weight: 600;
+  }
+  .includes p em { color: #9A8060; font-style: normal; font-weight: 400; }
+
+  /* ─── ORNAMENT DIVIDER ─── */
+  .divider-row {
+    display: flex; align-items: center; gap: 0;
+    padding: 0 72px; flex-shrink: 0; height: 52px;
+    background: #FDF6EC;
+  }
+  .div-line { flex: 1; height: 1px; background: #E0CFBA; }
+  .div-ornament {
+    color: #C8902A; font-size: 13px;
+    padding: 0 14px; letter-spacing: 0.3em;
+  }
+
+  /* ─── SECTION B: PHAD WORKSHOP ─── */
+  .section-b {
+    background: #FFF8EE;
+    border-top: 3px solid #C8902A;
+    padding: 36px 72px 36px;
+    flex: 1;
+    display: flex; flex-direction: column;
+  }
+  .phad-eyebrow {
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 16px;
+  }
+  .phad-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px; font-weight: 700;
+    color: #3B2A1A; line-height: 1.1; margin-bottom: 12px;
+  }
+  .phad-desc {
+    font-size: 15.5px; color: #5C3D1E;
+    line-height: 1.8; margin-bottom: 22px;
+    max-width: 760px; flex: 1;
+  }
+  .phad-details {
+    display: flex; gap: 0; margin-bottom: 28px;
+    border: 1.5px solid #DDD0BA; border-radius: 8px; overflow: hidden;
+  }
+  .phad-detail {
+    flex: 1; text-align: center;
+    padding: 14px 10px;
+    border-right: 1px solid #DDD0BA;
+    background: #fff;
+  }
+  .phad-detail:last-child { border-right: none; }
+  .phad-detail-icon { font-size: 20px; margin-bottom: 5px; }
+  .phad-detail-text {
+    font-size: 12px; font-weight: 700;
+    color: #3B2A1A; line-height: 1.4;
+  }
+  .phad-detail-sub { font-size: 10.5px; color: #9A8060; margin-top: 2px; }
+
+  .cta-row {
+    display: flex; align-items: center; gap: 20px;
+  }
+  .btn-dark {
+    background: #3B2A1A; color: #FDF6EC;
+    border-radius: 4px; padding: 14px 30px;
+    font-family: 'Lato', sans-serif;
+    font-size: 13px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    text-decoration: none; display: inline-block;
+    flex-shrink: 0;
+  }
+  .cta-note {
+    font-size: 13px; color: #9A8060; font-style: italic; line-height: 1.5;
+  }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    background: #3B2A1A;
+    padding: 26px 72px;
+    display: flex; align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+  }
+  .footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px; color: #FDF6EC; font-weight: 700;
+  }
+  .footer-brand em { color: #C8902A; font-style: normal; }
+  .footer-right { text-align: right; }
+  .footer-right p { font-size: 12px; color: rgba(253,246,236,0.5); margin-bottom: 3px; }
+  .footer-right strong { font-size: 14.5px; color: #E8A838; letter-spacing: 0.05em; }
+</style>
+</head>
+<body>
+<div class="flyer">
+
+  <!-- TOP BAND -->
+  <div class="top-band">
+    <div class="top-label">☀ Summer 2026 · Art with Ashwini · Maple Valley, WA</div>
+    <div class="top-title">Two Ways to Create<br>This <em>Summer</em></div>
+    <div class="top-sub">Artist Series &nbsp;·&nbsp; Indian Heritage &nbsp;·&nbsp; Home Studio</div>
+  </div>
+
+  <!-- ═══ SECTION A: SUMMER ART WORKSHOP ═══ -->
+  <div class="section-a">
+    <div class="section-header">
+      <span class="badge">☀ Featured · Summer 2026</span>
+      <span class="badge outline">All Ages Welcome</span>
+    </div>
+    <div class="section-title">Summer Art Workshop</div>
+    <div class="section-tagline">5 Days &nbsp;·&nbsp; 5 Legendary Artists &nbsp;·&nbsp; 5 Original Paintings to Take Home</div>
+
+    <div class="pills">
+      <div class="pill">📅 July 14 – 18, 2026</div>
+      <div class="pill">🕙 10:30 – 11:30 AM</div>
+      <div class="pill">🎨 All Ages</div>
+      <div class="pill">📍 Maple Valley Home Studio</div>
+    </div>
+
+    <div class="label">The artists — one per day</div>
+    <div class="artists-grid">
+      <div class="artist-card">
+        <div class="artist-day">Mon · Jul 14</div>
+        <div class="artist-icon">🔵</div>
+        <div class="artist-name">Wassily Kandinsky</div>
+        <div class="artist-style">Shapes &amp; Music</div>
+      </div>
+      <div class="artist-card">
+        <div class="artist-day">Tue · Jul 15</div>
+        <div class="artist-icon">⭕</div>
+        <div class="artist-name">Yayoi Kusama</div>
+        <div class="artist-style">Dots &amp; Infinity</div>
+      </div>
+      <div class="artist-card">
+        <div class="artist-day">Wed · Jul 16</div>
+        <div class="artist-icon">🌸</div>
+        <div class="artist-name">Georgia O'Keeffe</div>
+        <div class="artist-style">Closeup &amp; Wonder</div>
+      </div>
+      <div class="artist-card">
+        <div class="artist-day">Thu · Jul 17</div>
+        <div class="artist-icon">✨</div>
+        <div class="artist-name">Gustav Klimt</div>
+        <div class="artist-style">Gold &amp; Pattern</div>
+      </div>
+      <div class="artist-card">
+        <div class="artist-day">Fri · Jul 18</div>
+        <div class="artist-icon">🟣</div>
+        <div class="artist-name">Georges Seurat</div>
+        <div class="artist-style">Color &amp; Light</div>
+      </div>
+    </div>
+
+    <div class="pricing-row">
+      <div class="price-card">
+        <div class="price-days">1 Day</div>
+        <div class="price-amt">$35</div>
+        <div class="price-note">drop-in · any day</div>
+      </div>
+      <div class="price-card">
+        <div class="price-days">2 Days</div>
+        <div class="price-amt">$65</div>
+        <div class="price-note">$32.50 / day</div>
+      </div>
+      <div class="price-card best">
+        <div class="best-badge">★ Best Value</div>
+        <div class="price-days">Full Week</div>
+        <div class="price-amt">$125</div>
+        <div class="price-note">all 5 days · just $25 / day</div>
+      </div>
+    </div>
+
+    <div class="includes">
+      <span>🎨</span>
+      <p>All art materials included &nbsp;<em>· Paper · Markers · Color supplies · Canvas</em></p>
+    </div>
+  </div>
+
+  <!-- DIVIDER -->
+  <div class="divider-row">
+    <div class="div-line"></div>
+    <div class="div-ornament">· · ✦ · ·</div>
+    <div class="div-line"></div>
+  </div>
+
+  <!-- ═══ SECTION B: PHAD PAINTING WORKSHOP ═══ -->
+  <div class="section-b">
+    <div class="phad-eyebrow">
+      <span class="badge">Coming Soon</span>
+      <span class="badge outline">Special Workshop · Age 12+ &amp; Adults</span>
+    </div>
+    <div class="phad-title">Phad Painting Workshop</div>
+    <div class="phad-desc">
+      A 2-day deep dive into Phad — one of Rajasthan's oldest scroll painting traditions.
+      You will learn the symbols, the stories, and the style, then create your own
+      original Phad-inspired piece to take home.
+    </div>
+
+    <div class="phad-details">
+      <div class="phad-detail">
+        <div class="phad-detail-icon">🗓</div>
+        <div class="phad-detail-text">2 Days</div>
+        <div class="phad-detail-sub">Consecutive</div>
+      </div>
+      <div class="phad-detail">
+        <div class="phad-detail-icon">⏱</div>
+        <div class="phad-detail-text">2 Hours Each Day</div>
+        <div class="phad-detail-sub">Focused sessions</div>
+      </div>
+      <div class="phad-detail">
+        <div class="phad-detail-icon">🎨</div>
+        <div class="phad-detail-text">All Materials</div>
+        <div class="phad-detail-sub">Included</div>
+      </div>
+      <div class="phad-detail">
+        <div class="phad-detail-icon">📍</div>
+        <div class="phad-detail-text">Location</div>
+        <div class="phad-detail-sub">To be announced</div>
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <a class="btn-dark" href="#">Register Interest →</a>
+      <span class="cta-note">Date confirmed once spots are locked in.<br>Register interest so Ashwini can notify you first.</span>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-brand">Art with <em>Ashwini</em></div>
+    <div class="footer-right">
+      <p>Register &amp; learn more at</p>
+      <strong>artwithashwini.com</strong>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

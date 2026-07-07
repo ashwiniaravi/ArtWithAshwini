@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Ashwini &mdash; art classes, workshops, curriculum and more in Maple Valley, WA.">
+  <title>Get in Touch &mdash; Art with Ashwini</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="index.html" class="site-logo">Art with <strong>Ashwini</strong></a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="classes.html">Classes</a>
+        <a href="curriculum.html">Curriculum</a>
+        <a href="shop.html">Shop</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="blog.html">Blog</a>
+        <a href="shakthi-circle.html">Shakthi Circle</a>
+        <a href="contact.html" class="nav-cta">Get in Touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Let&rsquo;s connect</span>
+      <h1>Get in Touch</h1>
+      <p>Whether you want to join a class, ask about a workshop, gift an art session, or just say hello &mdash; I&rsquo;d love to hear from you.</p>
+    </div>
+  </section>
+
+  <section class="section section--white">
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- FORM -->
+        <div class="contact-form-wrap">
+          <h2>Send a message</h2>
+          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form">
+            <div class="form-group">
+              <label for="name">Your name</label>
+              <input type="text" id="name" name="name" placeholder="How should I address you?" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" id="email" name="email" placeholder="I&rsquo;ll reply here" required>
+            </div>
+            <div class="form-group">
+              <label for="subject">What&rsquo;s this about?</label>
+              <select id="subject" name="subject">
+                <option value="">Select a topic</option>
+                <option value="classes">Classes &mdash; Indian Folk Art Program</option>
+                <option value="kids">Kids Art Classes</option>
+                <option value="workshop">Workshop Interest</option>
+                <option value="gift">Gifting an Art Class</option>
+                <option value="birthday">Birthday Party / Group Activity</option>
+                <option value="docent">Docent / School Program</option>
+                <option value="custom">Custom Lesson Plan</option>
+                <option value="shakthi">Shakthi Circle</option>
+                <option value="other">Something else</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Your message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me what you&rsquo;re looking for, your experience level, any questions you have &mdash; anything that helps me understand how I can help." required></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">Send Message</button>
+          </form>
+        </div>
+
+        <!-- INFO -->
+        <div class="contact-info">
+          <h2>Find me in Maple Valley</h2>
+          <p>I teach in-person classes and workshops in Maple Valley, Washington. If you are nearby or planning to be, I&rsquo;d love to have you in class.</p>
+
+          <div class="contact-detail">
+            <strong>Location</strong>
+            <p>Maple Valley, WA</p>
+          </div>
+
+          <div class="contact-detail">
+            <strong>Classes</strong>
+            <p>Indian folk art for ages 14 &amp; up<br>Art for kids<br>Workshops (see <a href="classes.html">Classes page</a>)</p>
+          </div>
+
+          <div class="contact-detail">
+            <strong>Response time</strong>
+            <p>I typically reply within 1&ndash;2 days. If you haven&rsquo;t heard back, feel free to send a follow-up.</p>
+          </div>
+
+          <div class="contact-detail">
+            <strong>Shakthi Circle</strong>
+            <p>To join the WhatsApp community, visit the <a href="shakthi-circle.html">Shakthi Circle page</a> for the direct link.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__inner">
+        <div class="footer-brand">
+          <a href="index.html" class="site-logo">Art with <strong>Ashwini</strong></a>
+          <p>Artist, teacher, art docent and lifelong learner. Based in Maple Valley, Washington.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <a href="about.html">About</a>
+          <a href="classes.html">Classes &amp; Workshops</a>
+          <a href="curriculum.html">Curriculum</a>
+          <a href="shop.html">Shop</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="blog.html">Blog</a>
+          <a href="shakthi-circle.html">Shakthi Circle</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="contact.html">Get in Touch</a>
+          <a href="shakthi-circle.html">Join Shakthi Circle</a>
+          <p>Maple Valley, WA</p>
+        </div>
+      </div>
+      <div class="footer-bottom">&copy; 2026 Art with Ashwini. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+</body>
+</html>

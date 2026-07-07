@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400;1,700&family=Lato:wght@300;400;700;900&display=swap');
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    width: 1080px;
+    min-height: 1350px;
+    font-family: 'Lato', sans-serif;
+    background: #FDF6EC;
+  }
+
+  .flyer {
+    width: 1080px;
+    min-height: 1350px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ─── TOP BAND ─── */
+  .top-band {
+    background: linear-gradient(135deg, #8B2500 0%, #C0552B 100%);
+    padding: 50px 72px 44px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .top-band::before {
+    content: '';
+    position: absolute;
+    bottom: -60px; right: -60px;
+    width: 280px; height: 280px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+  }
+  .top-band::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(to right, #C8902A, #E8A838, #C8902A);
+  }
+  .top-date {
+    font-size: 12px; font-weight: 700;
+    letter-spacing: 0.38em; text-transform: uppercase;
+    color: rgba(253,246,236,0.6); margin-bottom: 18px;
+  }
+  .top-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 76px; font-weight: 700;
+    color: #FDF6EC; line-height: 1.03; margin-bottom: 14px;
+  }
+  .top-title em { color: #E8A838; font-style: italic; }
+  .top-sub {
+    font-size: 16px; font-weight: 300;
+    color: rgba(253,246,236,0.72);
+    letter-spacing: 0.14em; text-transform: uppercase;
+  }
+
+  /* ─── PILL ROW ─── */
+  .pill-row {
+    background: #C8902A;
+    padding: 20px 72px;
+    display: flex; gap: 12px; flex-wrap: wrap;
+    align-items: center; flex-shrink: 0;
+  }
+  .pill {
+    background: rgba(255,255,255,0.2);
+    border-radius: 100px; padding: 7px 20px;
+    font-size: 13.5px; font-weight: 700;
+    color: #fff; letter-spacing: 0.05em; white-space: nowrap;
+  }
+
+  /* ─── BODY ─── */
+  .body {
+    flex: 1;
+    display: flex; flex-direction: column;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  /* Tagline band */
+  .tagline-band {
+    padding: 30px 72px;
+    border-bottom: 1px solid #E8DBC8;
+    flex-shrink: 0;
+  }
+  .tagline {
+    font-family: 'Playfair Display', serif;
+    font-style: italic; font-size: 21px;
+    color: #5C3D1E; line-height: 1.6;
+    border-left: 4px solid #C8902A;
+    padding-left: 22px;
+  }
+
+  /* Art forms */
+  .art-forms-band {
+    padding: 28px 72px;
+    background: #F5EAD8;
+    border-bottom: 1px solid #E8DBC8;
+    flex-shrink: 0;
+  }
+  .label {
+    font-size: 10.5px; font-weight: 700;
+    letter-spacing: 0.32em; text-transform: uppercase;
+    color: #C8902A; margin-bottom: 13px;
+  }
+  .art-forms {
+    display: flex; flex-wrap: wrap; gap: 8px;
+  }
+  .art-tag {
+    background: #fff; border: 1.5px solid #DDD0BA;
+    border-radius: 100px; padding: 6px 16px;
+    font-size: 13px; font-weight: 700; color: #3B2A1A;
+  }
+
+  /* Two tracks */
+  .tracks-band {
+    padding: 28px 72px;
+    border-bottom: 1px solid #E8DBC8;
+    flex-shrink: 0;
+  }
+  .tracks-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+  }
+  .track-card {
+    border-radius: 8px; padding: 22px 22px;
+  }
+  .track-card.kids { background: #3B2A1A; }
+  .track-card.adults { background: #F0E6D0; }
+  .track-eyebrow {
+    font-size: 10.5px; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .track-card.kids .track-eyebrow { color: #C8902A; }
+  .track-card.adults .track-eyebrow { color: #C0552B; }
+  .track-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px; font-weight: 700;
+    line-height: 1.2; margin-bottom: 10px;
+  }
+  .track-card.kids .track-title { color: #FDF6EC; }
+  .track-card.adults .track-title { color: #3B2A1A; }
+  .track-desc { font-size: 13.5px; line-height: 1.75; }
+  .track-card.kids .track-desc { color: rgba(253,246,236,0.72); }
+  .track-card.adults .track-desc { color: #5C3D1E; }
+  .track-detail {
+    margin-top: 14px; font-size: 11.5px; font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+  .track-card.kids .track-detail { color: #C8902A; }
+  .track-card.adults .track-detail { color: #C0552B; }
+
+  /* Features grid */
+  .features-band {
+    padding: 0 72px;
+    flex-shrink: 0;
+  }
+  .features-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    border: 1.5px solid #E0CFBA; border-radius: 8px; overflow: hidden;
+  }
+  .feature {
+    padding: 20px 16px; text-align: center;
+    border-right: 1px solid #E0CFBA;
+    background: #fff;
+  }
+  .feature:last-child { border-right: none; }
+  .feature-icon { font-size: 24px; margin-bottom: 7px; }
+  .feature-text { font-size: 12.5px; font-weight: 700; color: #3B2A1A; line-height: 1.4; }
+  .feature-sub { font-size: 10.5px; color: #9A8060; margin-top: 3px; }
+
+  /* Quote */
+  .quote-band {
+    flex: 1;
+    background: #3B2A1A;
+    padding: 30px 72px;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .quote-mark { font-size: 44px; color: #C8902A; line-height: 0.8; margin-bottom: 10px; }
+  .quote-text {
+    font-family: 'Playfair Display', serif;
+    font-style: italic; font-size: 20px;
+    color: #FDF6EC; line-height: 1.65;
+    max-width: 700px;
+  }
+  .quote-attr {
+    margin-top: 14px; font-size: 12px;
+    color: rgba(253,246,236,0.45); letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  /* CTA footer */
+  .cta-band {
+    background: #FFF8EE;
+    border-top: 3px solid #C8902A;
+    padding: 28px 72px;
+    display: flex; align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+  }
+  .cta-left { }
+  .cta-prompt {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px; font-weight: 700;
+    color: #3B2A1A; margin-bottom: 5px;
+  }
+  .cta-note { font-size: 13.5px; color: #7A6040; }
+  .btn-enroll {
+    background: #C0552B; color: #fff;
+    border-radius: 4px; padding: 14px 32px;
+    font-family: 'Lato', sans-serif;
+    font-size: 13px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    text-decoration: none; display: inline-block; white-space: nowrap;
+  }
+
+  /* Footer */
+  .footer {
+    background: #2B1E0F;
+    padding: 22px 72px;
+    display: flex; align-items: center;
+    justify-content: space-between; flex-shrink: 0;
+  }
+  .footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px; color: #FDF6EC; font-weight: 700;
+  }
+  .footer-brand em { color: #C8902A; font-style: normal; }
+  .footer-mid { text-align: center; }
+  .footer-tagline { font-size: 12px; color: rgba(253,246,236,0.35); font-style: italic; }
+  .footer-url { font-size: 13px; color: #E8A838; letter-spacing: 0.06em; font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="flyer">
+
+  <!-- TOP BAND -->
+  <div class="top-band">
+    <div class="top-date">📅 Starting June 17, 2026 · Maple Valley, WA · Home Studio</div>
+    <div class="top-title">Art <em>Classes</em></div>
+    <div class="top-sub">Kids &amp; Adults &nbsp;·&nbsp; Fine Arts &amp; Indian Art Traditions &nbsp;·&nbsp; All Levels</div>
+  </div>
+
+  <!-- PILL ROW -->
+  <div class="pill-row">
+    <div class="pill">🏠 Home Studio</div>
+    <div class="pill">👤 One-on-One</div>
+    <div class="pill">👥 Small Groups</div>
+    <div class="pill">🎨 All Ages</div>
+    <div class="pill">✓ No Prior Skills Needed</div>
+    <div class="pill">📅 Summer · Breaks · Ongoing</div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- TAGLINE -->
+    <div class="tagline-band">
+      <div class="tagline">
+        Through art, imagination becomes skill<br>
+        and expression becomes strength.
+      </div>
+    </div>
+
+    <!-- ART FORMS -->
+    <div class="art-forms-band">
+      <div class="label">What we learn</div>
+      <div class="art-forms">
+        <span class="art-tag">Drawing &amp; Painting</span>
+        <span class="art-tag">Kalamkari</span>
+        <span class="art-tag">Madhubani</span>
+        <span class="art-tag">Patachitra</span>
+        <span class="art-tag">Pichwai</span>
+        <span class="art-tag">Phad</span>
+        <span class="art-tag">Gond</span>
+        <span class="art-tag">World Art &amp; Cultures</span>
+        <span class="art-tag">Composition &amp; Color</span>
+      </div>
+    </div>
+
+    <!-- TWO TRACKS -->
+    <div class="tracks-band">
+      <div class="tracks-grid">
+        <div class="track-card kids">
+          <div class="track-eyebrow">For Children</div>
+          <div class="track-title">Finding Their Own Voice</div>
+          <div class="track-desc">Children have stories already living inside them. Art gives them a way to let those stories out. Every lesson is built around your child — their age, their curiosity, how they learn best.</div>
+          <div class="track-detail">Summer · Spring · Winter Breaks · After School</div>
+        </div>
+        <div class="track-card adults">
+          <div class="track-eyebrow">For Adults</div>
+          <div class="track-title">You Start Where You Are</div>
+          <div class="track-desc">Fine arts, Indian art traditions, art from cultures around the world — you say what you're curious about. Every curriculum is customized. No skills needed to begin. One-on-one or a small group.</div>
+          <div class="track-detail">Private · Completely customized · Any pace</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FEATURES -->
+    <div class="features-band">
+      <div class="features-grid">
+        <div class="feature">
+          <div class="feature-icon">🎨</div>
+          <div class="feature-text">All Materials Included</div>
+          <div class="feature-sub">Every session</div>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">📍</div>
+          <div class="feature-text">Home Studio</div>
+          <div class="feature-sub">Maple Valley, WA</div>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">📅</div>
+          <div class="feature-text">Flexible Schedule</div>
+          <div class="feature-sub">Summer &amp; school breaks</div>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">✨</div>
+          <div class="feature-text">Custom Curriculum</div>
+          <div class="feature-sub">Built around you</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- QUOTE -->
+    <div class="quote-band">
+      <div class="quote-mark">"</div>
+      <div class="quote-text">
+        When a child finishes a painting and their eyes light up —<br>
+        nothing compares to that. Teaching art is how I give back<br>
+        what art gives me.
+      </div>
+      <div class="quote-attr">— Ashwini &nbsp;·&nbsp; Art with Ashwini</div>
+    </div>
+
+  </div>
+
+  <!-- CTA BAND -->
+  <div class="cta-band">
+    <div class="cta-left">
+      <div class="cta-prompt">Ready to Begin?</div>
+      <div class="cta-note">Reserve your spot — classes fill quickly.</div>
+    </div>
+    <a class="btn-enroll" href="#">Enroll at artwithashwini.com →</a>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-brand">Art with <em>Ashwini</em></div>
+    <div class="footer-mid">
+      <div class="footer-tagline">"Art is my passport to happiness"</div>
+    </div>
+    <div class="footer-url">artwithashwini.com</div>
+  </div>
+
+</div>
+</body>
+</html>
