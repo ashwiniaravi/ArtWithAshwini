@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ashwini — Indian folk artist and teacher in Maple Valley, WA. Art classes, Indian Folk Art Program, and a gallery of original work.">
+  <title>Art with Ashwini</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .connect-wrap { max-width: 560px; margin: 0 auto; padding: 3rem 1.5rem 4rem; text-align: center; }
+    .connect-photo {
+      width: 140px; height: 140px; border-radius: 50%; object-fit: cover;
+      margin: 0 auto 1.5rem; border: 4px solid #fff;
+      box-shadow: 0 0 0 3px var(--ochre), 0 10px 30px rgba(61,35,20,0.15);
+      display: block;
+    }
+    .connect-wrap h1 { font-size: clamp(1.7rem, 4vw, 2.2rem); margin-bottom: 0.5rem; }
+    .connect-wrap .tagline { color: var(--warm-gray); font-size: 1rem; margin-bottom: 2rem; }
+    .connect-section { margin-bottom: 2.75rem; text-align: left; }
+    .connect-section h2 { font-size: 1.05rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 0.75rem; }
+    .connect-section p { color: var(--brown-mid); line-height: 1.8; margin-bottom: 1rem; }
+    .connect-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; margin-top: 1rem; }
+    @media (max-width: 480px) { .connect-gallery { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 768px) {
+      div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+    }
+    .connect-gallery img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 6px; display: block; }
+    .connect-gallery .placeholder {
+      aspect-ratio: 1/1; border-radius: 6px; border: 1.5px dashed rgba(61,35,20,0.2);
+      background: var(--cream); display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; color: var(--warm-gray); text-align: center; padding: 0.5rem;
+    }
+    .connect-btn {
+      display: block; width: 100%; box-sizing: border-box; text-align: center;
+      background: var(--terracotta); color: #fff; font-weight: 700; padding: 0.9rem 1.5rem;
+      border-radius: 6px; text-decoration: none; font-size: 0.95rem; margin-bottom: 0.85rem;
+    }
+    .connect-btn--outline { background: transparent; color: var(--terracotta); border: 2px solid var(--terracotta); }
+    .connect-footer { text-align: center; padding: 2rem 1.5rem; color: var(--warm-gray); font-size: 0.82rem; }
+    .connect-footer a { color: var(--terracotta); }
+  </style>
+</head>
+<body>
+
+  <div class="connect-wrap">
+
+    <img src="images/ashwini-beach.jpg" alt="Ashwini" class="connect-photo">
+    <h1>Art with Ashwini</h1>
+    <p class="tagline">Indian folk artist, art docent, and teacher &middot; Maple Valley, WA</p>
+
+    <div class="connect-section">
+      <h2>My Journey</h2>
+      <p>I've always been a teacher &mdash; of visual art, dance, craft, and even jewelry making with friends over the years. My curiosity keeps circling back to Kalamkari, a tradition I return to again and again, even as I wander into new ones like Madhubani and Phad.</p>
+      <p>I'm always discovering something new, and I love sharing what I learn with more people along the way &mdash; that's the whole point.</p>
+      <p style="font-weight:700; color:var(--terracotta);">Ten years of teaching and art &mdash; and I'm just getting started.</p>
+      <p style="font-style:italic; color:var(--brown-mid);">One day, I'd love to bring it all together in a showcase &mdash; my own work, and the work of everyone I've taught over the years.</p>
+    </div>
+
+    <div class="connect-section">
+      <h2>Classes</h2>
+      <p>Regular Art Class for kids and adults, and a dedicated Indian Folk Art Program for teens and adults &mdash; six traditions, three levels, taught by a practicing artist.</p>
+      <a href="classes.html" class="connect-btn">View Classes &amp; Enroll &rarr;</a>
+    </div>
+
+    <div class="connect-section">
+      <h2>Upcoming Classes</h2>
+      <p>Enrollment is open now for both online and in-person sessions. Reach out for current openings and scheduling.</p>
+      <a href="classes.html#register" class="connect-btn connect-btn--outline">See Openings &rarr;</a>
+    </div>
+
+    <div class="connect-section">
+      <h2>Free Community Workshops</h2>
+      <p>Shakthicircle mindful art sessions at Maple Valley Library &mdash; free, all ages, no experience needed.</p>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.6rem; margin-top:1rem;">
+        <div>
+          <img src="images/workshops/gond-patterned-birds-flyer.jpg" alt="Gond Patterned Birds &mdash; mindful art workshop, July 10, 2026" style="width:100%; height:auto; border-radius:6px; display:block;">
+          <p style="font-size:0.78rem; color:var(--warm-gray); margin-top:0.4rem; text-align:center;">Upcoming &middot; July 10</p>
+        </div>
+        <div>
+          <img src="images/workshops/nesting-your-joy-flyer.jpg" alt="Nesting Your Joy &mdash; mindful drawing activity, June 25, 2026" style="width:100%; height:auto; border-radius:6px; display:block;">
+          <p style="font-size:0.78rem; color:var(--warm-gray); margin-top:0.4rem; text-align:center;">Completed &middot; June 25</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="connect-section">
+      <h2>Gallery &mdash; Works Over the Years</h2>
+      <p>Ten years of teaching and art, and counting &mdash; this gallery will grow to hold the journey. More pieces coming soon.</p>
+      <div class="connect-gallery">
+        <div class="placeholder">More coming soon</div>
+        <div class="placeholder">More coming soon</div>
+        <div class="placeholder">More coming soon</div>
+        <div class="placeholder">More coming soon</div>
+        <div class="placeholder">More coming soon</div>
+        <div class="placeholder">More coming soon</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="connect-footer">
+    &copy; 2026 Art with Ashwini &middot; Maple Valley, Washington
+  </div>
+
+</body>
+</html>

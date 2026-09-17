@@ -6,8 +6,16 @@ const base = 'file:///D:/Projects/ArtWithAshwini/';
 const pages = [
   { name: 'Home',              url: base + 'index.html' },
   { name: 'Classes',           url: base + 'classes.html' },
+  { name: 'Gallery',           url: base + 'gallery.html' },
   { name: 'About',             url: base + 'about.html' },
   { name: 'Shakthicircle',     url: base + 'shakthi-circle.html' },
+  { name: 'Blog',              url: base + 'blog.html' },
+  { name: 'Blog Post 1',       url: base + 'blog-ten-minutes-with-one-sunflower.html' },
+  { name: 'Blog Post 2',       url: base + 'blog-a-table-i-wasnt-expecting.html' },
+  { name: 'Teaching',          url: base + 'teaching.html' },
+  { name: 'Workshops',         url: base + 'workshops.html' },
+  { name: 'Reference Materials', url: base + 'vedic-school-materials.html' },
+  { name: 'Connect',           url: base + 'connect.html' },
   { name: 'Flyer Art Classes', url: base + 'flyer-art-classes.html' },
   { name: 'Flyer Summer',      url: base + 'flyer-summer-combined.html' },
 ];

@@ -216,7 +216,7 @@ h4 { font-size: 1rem; }
   transition: all 0.25s;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1180px) {
   .nav-toggle { display: flex; }
   .site-nav {
     display: none;
@@ -736,6 +736,22 @@ h4 { font-size: 1rem; }
 .gallery-item:hover .gallery-item__overlay { opacity: 1; }
 .gallery-item__overlay h4 { color: #fff; font-size: 0.9rem; margin-bottom: 0.2rem; }
 .gallery-item__overlay p  { color: rgba(255,255,255,0.7); font-size: 0.75rem; margin: 0; }
+
+.gallery-item__watermark {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='150'><text x='4' y='60' font-family='Georgia, serif' font-size='15' fill='rgba(0,0,0,0.38)' transform='rotate(-28 110 75)'>Art with Ashwini</text><text x='2' y='58' font-family='Georgia, serif' font-size='15' fill='rgba(255,255,255,0.45)' transform='rotate(-28 108 73)'>Art with Ashwini</text></svg>");
+  background-repeat: repeat;
+}
+.gallery-item--placeholder {
+  border: 1.5px dashed rgba(61,35,20,0.2);
+  background: var(--cream);
+  flex-direction: column;
+  gap: 0.5rem;
+  cursor: default;
+}
+.gallery-item--placeholder span { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; }
 
 /* ============================================================
    Blog Full Page

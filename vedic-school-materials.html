@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free printable art, craft, and song reference materials for Vedic school teachers, created and shared by Ashwini, an art docent at a Vedic school in Maple Valley.">
+  <title>Vedic School Teacher Reference Materials — Art with Ashwini</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .container { max-width: 960px; }
+    .section   { padding: 3rem 0; }
+    .resource-card { background:#fff; border-radius:4px; border:1px solid rgba(61,35,20,0.1); border-left:3px solid var(--terracotta); padding:0.85rem 1rem; display:flex; flex-direction:column; gap:0.35rem; }
+    .resource-card h4 { font-size:0.92rem; margin:0; line-height:1.3; }
+    .resource-card p { font-size:0.8rem; color:var(--warm-gray); margin:0; line-height:1.5; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+    .resource-card a.resource-link { font-size:0.76rem; font-weight:700; letter-spacing:0.03em; color:var(--terracotta); text-decoration:none; }
+    .resource-card a.resource-link:hover { text-decoration:underline; }
+    .resource-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:0.75rem; }
+    .resource-placeholder { border:1.5px dashed rgba(61,35,20,0.2); border-radius:4px; padding:1.5rem; text-align:center; color:var(--warm-gray); font-size:0.85rem; font-style:italic; background:var(--cream); }
+    .resource-tag { display:inline-block; font-size:0.64rem; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:var(--ochre); }
+
+    .topic-block { border:1px solid rgba(61,35,20,0.12); border-radius:6px; margin-bottom:0.75rem; overflow:hidden; }
+    .topic-toggle { width:100%; display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:0.85rem 1.25rem; background:var(--cream); border:none; cursor:pointer; text-align:left; font-family:var(--font-body); }
+    .topic-toggle:hover { background:#F0E6D8; }
+    .topic-toggle__name { font-family:var(--font-heading); font-size:1.05rem; color:var(--brown); }
+    .topic-toggle__meta { display:flex; align-items:center; gap:0.75rem; }
+    .topic-toggle__count { font-size:0.76rem; color:var(--warm-gray); }
+    .topic-toggle__chevron { font-size:0.8rem; color:var(--terracotta); transition:transform 0.15s; }
+    .topic-toggle[aria-expanded="true"] .topic-toggle__chevron { transform:rotate(180deg); }
+    .topic-panel { padding:1rem 1.25rem 1.25rem; }
+    .topic-panel[hidden] { display:none; }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="index.html" class="site-logo">Art with <strong>Ashwini</strong></a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="teaching.html">Teaching</a>
+        <a href="workshops.html">Workshops</a>
+        <a href="vedic-school-materials.html" class="active">Reference Materials</a>
+        <a href="classes.html" class="nav-cta">Classes</a>
+        <a href="blog.html">Blog</a>
+        <a href="shakthi-circle.html">Shakthicircle</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section style="background:var(--cream); padding:4rem 0 3rem;">
+    <div class="container">
+      <div style="max-width:720px;">
+        <span class="eyebrow">Free resources</span>
+        <h1 style="margin:0.5rem 0 1.25rem; font-size:clamp(2rem,3.6vw,3rem);">Vedic School Teacher Reference Materials</h1>
+        <p style="font-size:1.05rem; line-height:1.85; color:var(--brown-mid);">Printable art, craft, and song materials I make as an art docent for a Vedic school in Maple Valley, tied to what the kids are learning in class. A growing collection — free to download, use, and share with any teacher, parent, or family who can make use of it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRINTABLE ART LESSONS -->
+  <section class="section" style="background:#fff;">
+    <div class="container">
+      <span class="eyebrow">Art &amp; craft</span>
+      <h2 style="margin:0.5rem 0 1.5rem;">Printable Art Lessons</h2>
+
+      <div class="topic-block">
+        <button class="topic-toggle" aria-expanded="false" aria-controls="topic-damodara">
+          <span class="topic-toggle__name">Damodara</span>
+          <span class="topic-toggle__meta">
+            <span class="topic-toggle__count">2 items</span>
+            <span class="topic-toggle__chevron">▾</span>
+          </span>
+        </button>
+        <div class="topic-panel" id="topic-damodara" hidden>
+          <div class="resource-grid">
+            <div class="resource-card">
+              <span class="resource-tag">Art</span>
+              <h4>Know Your Damodara</h4>
+              <p>Reference sheet explaining the name Damodara — Dama (rope) + Udara (belly) — with a labeled illustration.</p>
+              <a class="resource-link" href="https://raw.githubusercontent.com/ashwiniaravi/VedicSchool_Art/main/art/KnowYourDamodara.pdf" target="_blank" rel="noopener">Download PDF →</a>
+            </div>
+            <div class="resource-card">
+              <span class="resource-tag">Craft</span>
+              <h4>Damodara Krishna — Color, Cut, Create</h4>
+              <p>Cut out and glue Krishna and the Ulukhala onto construction paper, then tie a real rope around his waist.</p>
+              <a class="resource-link" href="https://raw.githubusercontent.com/ashwiniaravi/VedicSchool_Art/main/craft/DamodarKrishna_coloringpage.pdf" target="_blank" rel="noopener">Download PDF →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRINTABLE LYRICS FOR SONG/BHAJAN -->
+  <section class="section" style="background:var(--cream);">
+    <div class="container">
+      <span class="eyebrow">Lyrics &amp; reference</span>
+      <h2 style="margin:0.5rem 0 1.5rem;">Printable Lyrics for Song/Bhajan</h2>
+
+      <div class="topic-block">
+        <button class="topic-toggle" aria-expanded="false" aria-controls="topic-gopala-radha-lola">
+          <span class="topic-toggle__name">Gopala Radha Lola</span>
+          <span class="topic-toggle__meta">
+            <span class="topic-toggle__count">1 item</span>
+            <span class="topic-toggle__chevron">▾</span>
+          </span>
+        </button>
+        <div class="topic-panel" id="topic-gopala-radha-lola" hidden>
+          <div class="resource-grid">
+            <div class="resource-card">
+              <h4>Gopala Radha Lola</h4>
+              <a class="resource-link" href="https://sairhythms.sathyasai.org/song/gopala-radha-lola" target="_blank" rel="noopener">Learn the song →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <p style="text-align:center; color:var(--warm-gray); font-size:0.9rem; font-style:italic; padding:0 1.5rem 3rem;">More topics added as new classes come up.</p>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" style="background:var(--brown); border-top:1px solid rgba(255,255,255,0.08);">
+    <div class="container" style="padding-top:2.5rem; padding-bottom:1.5rem;">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-bottom:1.5rem;">
+        <a href="index.html" class="site-logo" style="color:var(--cream);">Art with <strong>Ashwini</strong></a>
+        <nav style="display:flex; gap:1.5rem; flex-wrap:wrap;">
+          <a href="index.html" style="color:rgba(250,247,242,0.55); font-size:0.82rem;">Home</a>
+          <a href="gallery.html" style="color:rgba(250,247,242,0.55); font-size:0.82rem;">Gallery</a>
+          <a href="teaching.html" style="color:rgba(250,247,242,0.55); font-size:0.82rem;">Teaching</a>
+          <a href="workshops.html" style="color:rgba(250,247,242,0.55); font-size:0.82rem;">Workshops</a>
+          <a href="classes.html" style="color:rgba(250,247,242,0.55); font-size:0.82rem;">Classes</a>
+          <a href="blog.html" style="color:rgba(250,247,242,0.55); font-size:0.82rem;">Blog</a>
+          <a href="shakthi-circle.html" style="color:rgba(250,247,242,0.55); font-size:0.82rem;">Shakthicircle</a>
+        </nav>
+      </div>
+      <p style="color:rgba(250,247,242,0.3); font-size:0.8rem; text-align:center; border-top:1px solid rgba(255,255,255,0.08); padding-top:1.25rem;">© 2026 Art with Ashwini · Maple Valley, Washington</p>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script>
+    document.querySelectorAll('.topic-toggle').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        const panel = document.getElementById(btn.getAttribute('aria-controls'));
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!isOpen));
+        panel.hidden = isOpen;
+      });
+    });
+  </script>
+</body>
+</html>
